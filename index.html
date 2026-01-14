@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Imago Creative Group</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+  font-family: Arial, sans-serif;
+  background:#f4f4f4;
+  margin:0;
+}
+header{
+  background:#000;
+  color:#fff;
+  padding:40px 20px;
+  text-align:center;
+}
+section{
+  padding:30px 20px;
+  max-width:1200px;
+  margin:auto;
+}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:20px;
+}
+.card{
+  background:#fff;
+  border-radius:14px;
+  padding:20px;
+  box-shadow:0 8px 18px rgba(0,0,0,.1);
+  min-height:240px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  transition:transform .2s ease;
+}
+.card.click{
+  transform:scale(1.05);
+}
+.divisi{
+  font-size:12px;
+  background:#000;
+  color:#fff;
+  padding:4px 10px;
+  border-radius:20px;
+  display:inline-block;
+  margin-bottom:10px;
+}
+button{
+  margin-top:15px;
+  padding:10px;
+  border:none;
+  border-radius:8px;
+  background:#000;
+  color:#fff;
+  font-weight:bold;
+  cursor:pointer;
+}
+button:hover{
+  background:#333;
+}
+footer{
+  background:#eee;
+  text-align:center;
+  padding:15px;
+  font-size:14px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Imago Creative Group</h1>
+  <p>Katalog Layanan & Jasa Digital</p>
+</header>
+
+<section>
+  <h2>Daftar Layanan</h2>
+  <div class="grid" id="layanan"></div>
+</section>
+
+<footer>
+  © 2026 Imago Creative Group. Semua hak dilindungi.
+</footer>
+
+<script>
+const wa = "6289508551377";
+
+const services = [
+  // ===== VISUAL =====
+  {divisi:"Visual",nama:"Edit Foto",harga:"Rp 5.000 / foto"},
+  {divisi:"Visual",nama:"Edit Video",harga:"Rp 5.000 / video"},
+  {divisi:"Visual",nama:"Edit Canva (slide, poster, banner, brosur, dsb.)",harga:"Rp 15.000 / desain"},
+  {divisi:"Visual",nama:"Edit ID Card",harga:"Rp 2.500 / desain"},
+  {divisi:"Visual",nama:"Edit selain di atas",harga:"Rp 2.500 – Rp 50.000"},
+  {divisi:"Visual",nama:"Edit Dokumen",harga:"Rp 25.000 – Rp 35.000 / dokumen"},
+  {divisi:"Visual",nama:"Desain Logo",harga:"Rp 50.000 – Rp 150.000"},
+  {divisi:"Visual",nama:"Desain Konten Sosial Media",harga:"Rp 20.000 – Rp 50.000 / konten"},
+  {divisi:"Visual",nama:"Desain Undangan (digital / print)",harga:"Rp 25.000 – Rp 75.000"},
+  {divisi:"Visual",nama:"Motion Graphic Sederhana",harga:"Rp 50.000 – Rp 100.000"},
+
+  // ===== KREATIF =====
+  {divisi:"Kreatif",nama:"Membuat Skrip Kreatif",harga:"Rp 15.000 / skrip"},
+  {divisi:"Kreatif",nama:"Konsep Kampanye Kreatif",harga:"Rp 50.000 – Rp 100.000"},
+  {divisi:"Kreatif",nama:"Copywriting (caption, iklan, artikel pendek)",harga:"Rp 10.000 – Rp 30.000 / teks"},
+  {divisi:"Kreatif",nama:"Storyboard / Outline Konten",harga:"Rp 20.000 – Rp 50.000"},
+  {divisi:"Kreatif",nama:"Ide Konten Bulanan (paket 10 ide)",harga:"Rp 100.000"},
+
+  // ===== MARKETING =====
+  {divisi:"Marketing",nama:"Strategi Marketing Dasar",harga:"Rp 50.000 – Rp 100.000"},
+  {divisi:"Marketing",nama:"Penyusunan Rencana Promosi (1 campaign)",harga:"Rp 75.000 – Rp 150.000"},
+  {divisi:"Marketing",nama:"Riset Target Audience",harga:"Rp 50.000 – Rp 100.000"},
+  {divisi:"Marketing",nama:"Social Media Management (per minggu)",harga:"Rp 100.000 – Rp 300.000"},
+  {divisi:"Marketing",nama:"Konsultasi Marketing (1 jam)",harga:"Rp 75.000"}
+];
+
+const container = document.getElementById("layanan");
+
+services.forEach(s=>{
+  const card=document.createElement("div");
+  card.className="card";
+  card.innerHTML=`
+    <div>
+      <div class="divisi">Divisi ${s.divisi}</div>
+      <h3>${s.nama}</h3>
+      <p>${s.harga}</p>
+    </div>
+    <button>Pesan Sekarang</button>
+  `;
+  card.querySelector("button").onclick=()=>{
+    card.classList.add("click");
+    setTimeout(()=>card.classList.remove("click"),300);
+
+    const text=encodeURIComponent(
+      `Halo Imago Creative Group,%0A
+Saya ingin memesan layanan:%0A
+📌 ${s.nama}%0A
+💰 ${s.harga}`
+    );
+    window.open(`https://wa.me/${wa}?text=${text}`,"_blank");
+  };
+  container.appendChild(card);
+});
+</script>
+
+</body>
+</html>
