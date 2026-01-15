@@ -2,150 +2,296 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>Imago Creative Group</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Imago Creative Group</title>
 
 <style>
+*{box-sizing:border-box}
 body{
-  font-family: Arial, sans-serif;
-  background:#f4f4f4;
   margin:0;
+  font-family:'Segoe UI',Arial,sans-serif;
+  background:#fff;
+  color:#222;
+  scroll-behavior:smooth
 }
-header{
-  background:#000;
-  color:#fff;
-  padding:40px 20px;
+
+/* HERO */
+.hero{
+  min-height:100vh;
+  background:
+    linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.75)),
+    url("https://images.unsplash.com/photo-1522202176988-66273c2fd55f");
+  background-size:cover;
+  background-position:center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
   text-align:center;
+  padding:40px 20px;
+  color:#fff
 }
+.hero-box{max-width:900px}
+.hero img{
+  width:140px;
+  margin-bottom:25px
+}
+.hero h1{
+  font-size:48px;
+  margin-bottom:15px;
+  letter-spacing:1px
+}
+.hero span{
+  color:#00e0ff
+}
+.hero p{
+  font-size:19px;
+  color:#e0e0e0;
+  line-height:1.7;
+  margin-bottom:35px
+}
+.hero button{
+  padding:16px 38px;
+  border-radius:50px;
+  border:none;
+  background:#00e0ff;
+  color:#000;
+  font-size:16px;
+  font-weight:bold;
+  cursor:pointer;
+  transition:.3s
+}
+.hero button:hover{
+  transform:scale(1.08)
+}
+
+/* TRUST */
+.trust{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:20px;
+  text-align:center;
+  margin-top:50px;
+  color:#ddd;
+  font-size:14px
+}
+
+/* SECTION */
 section{
-  padding:30px 20px;
+  padding:90px 20px;
   max-width:1200px;
-  margin:auto;
+  margin:auto
 }
+section h2{
+  text-align:center;
+  font-size:36px;
+  margin-bottom:50px
+}
+
+/* SERVICE */
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:20px;
+  gap:30px
 }
 .card{
   background:#fff;
-  border-radius:14px;
-  padding:20px;
-  box-shadow:0 8px 18px rgba(0,0,0,.1);
-  min-height:240px;
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
-  transition:transform .2s ease;
+  border-radius:18px;
+  padding:30px;
+  box-shadow:0 15px 40px rgba(0,0,0,.12);
+  transition:.35s
 }
-.card.click{
-  transform:scale(1.05);
+.card:hover{
+  transform:translateY(-10px)
 }
 .divisi{
   font-size:12px;
-  background:#000;
-  color:#fff;
-  padding:4px 10px;
-  border-radius:20px;
-  display:inline-block;
-  margin-bottom:10px;
+  color:#888
 }
-button{
-  margin-top:15px;
-  padding:10px;
+.card h3{
+  margin:12px 0
+}
+.card p{
+  font-size:15px
+}
+.card button{
+  margin-top:18px;
+  width:100%;
+  padding:14px;
+  border-radius:10px;
   border:none;
-  border-radius:8px;
   background:#000;
   color:#fff;
+  cursor:pointer
+}
+
+/* EBOOK */
+.ebook{
+  background:linear-gradient(135deg,#000,#1a1a1a);
+  color:#fff;
+  border-radius:30px;
+  padding:70px 30px;
+  text-align:center
+}
+.ebook h2{
+  color:#fff
+}
+.ebook p{
+  max-width:800px;
+  margin:auto;
+  font-size:18px;
+  line-height:1.7
+}
+.ebook .discount{
+  margin-top:20px;
+  font-size:20px;
   font-weight:bold;
-  cursor:pointer;
+  color:#00e0ff
 }
-button:hover{
-  background:#333;
+.ebook button{
+  margin-top:35px;
+  padding:18px 40px;
+  border-radius:50px;
+  border:none;
+  background:#00e0ff;
+  color:#000;
+  font-size:17px;
+  font-weight:bold;
+  cursor:pointer
 }
-footer{
-  background:#eee;
+
+/* ABOUT */
+.about{
   text-align:center;
-  padding:15px;
-  font-size:14px;
+  max-width:900px;
+  margin:auto;
+  font-size:18px;
+  line-height:1.8
+}
+
+/* FOOTER */
+footer{
+  background:#000;
+  color:#ccc;
+  padding:40px 20px;
+  text-align:center
+}
+footer strong{
+  color:#fff
+}
+.social{
+  margin-top:15px;
+  font-weight:bold
 }
 </style>
 </head>
 
 <body>
 
-<header>
-  <h1>Imago Creative Group</h1>
-  <p>Katalog Layanan & Jasa Digital</p>
-</header>
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-box">
+    <img src="imago.png" alt="Imago Logo">
 
+    <h1>Bangun Brand Digital<br><span>Lebih Profesional & Meyakinkan</span></h1>
+
+    <p>
+      Imago Creative Group membantu bisnis, personal brand, dan UMKM
+      berkembang melalui desain visual, konten kreatif,
+      produk digital, dan strategi marketing modern.
+    </p>
+
+    <button onclick="document.getElementById('layanan').scrollIntoView()">Mulai Sekarang</button>
+
+    <div class="trust">
+      <div>✔ Profesional</div>
+      <div>✔ Harga Terjangkau</div>
+      <div>✔ Fast Response</div>
+      <div>✔ Berpengalaman</div>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="layanan">
+<h2>Layanan Unggulan Kami</h2>
+<div class="grid" id="list-layanan"></div>
+</section>
+
+<!-- EBOOK -->
 <section>
-  <h2>Daftar Layanan</h2>
-  <div class="grid" id="layanan"></div>
+<div class="ebook">
+<h2>E-book Digital Imago</h2>
+<p>
+E-book berkualitas tinggi yang dirancang khusus untuk Anda serta
+disajikan secara simpel, menarik, dan penuh kesan.
+</p>
+<div class="discount">
+Diskon 30% sampai 1
+</div>
+<button onclick="order('E-book Digital Imago (Diskon 30%)')">
+Beli E-book Sekarang
+</button>
+</div>
+</section>
+
+<!-- ABOUT -->
+<section>
+<h2>Tentang Imago</h2>
+<div class="about">
+Imago Creative Group adalah perusahaan kreatif digital
+yang mengedepankan kualitas, strategi, dan profesionalisme.
+Kami hadir bukan sekadar membuat desain,
+tetapi menciptakan solusi yang berdampak nyata
+bagi pertumbuhan bisnis Anda.
+</div>
 </section>
 
 <footer>
-  © 2026 Imago Creative Group. Semua hak dilindungi.
+<strong>Imago Creative Group</strong><br>
+Instagram: @ImagoCreative.id<br>
+TikTok: @imago.creative.group
 </footer>
 
 <script>
-const wa = "6289508551377";
-
-const services = [
-  // ===== VISUAL =====
-  {divisi:"Visual",nama:"Edit Foto",harga:"Rp 5.000 / foto"},
-  {divisi:"Visual",nama:"Edit Video",harga:"Rp 5.000 / video"},
-  {divisi:"Visual",nama:"Edit Canva (slide, poster, banner, brosur, dsb.)",harga:"Rp 15.000 / desain"},
-  {divisi:"Visual",nama:"Edit ID Card",harga:"Rp 2.500 / desain"},
-  {divisi:"Visual",nama:"Edit selain di atas",harga:"Rp 2.500 – Rp 50.000"},
-  {divisi:"Visual",nama:"Edit Dokumen",harga:"Rp 25.000 – Rp 35.000 / dokumen"},
-  {divisi:"Visual",nama:"Desain Logo",harga:"Rp 50.000 – Rp 150.000"},
-  {divisi:"Visual",nama:"Desain Konten Sosial Media",harga:"Rp 20.000 – Rp 50.000 / konten"},
-  {divisi:"Visual",nama:"Desain Undangan (digital / print)",harga:"Rp 25.000 – Rp 75.000"},
-  {divisi:"Visual",nama:"Motion Graphic Sederhana",harga:"Rp 50.000 – Rp 100.000"},
-
-  // ===== KREATIF =====
-  {divisi:"Kreatif",nama:"Membuat Skrip Kreatif",harga:"Rp 15.000 / skrip"},
-  {divisi:"Kreatif",nama:"Konsep Kampanye Kreatif",harga:"Rp 50.000 – Rp 100.000"},
-  {divisi:"Kreatif",nama:"Copywriting (caption, iklan, artikel pendek)",harga:"Rp 10.000 – Rp 30.000 / teks"},
-  {divisi:"Kreatif",nama:"Storyboard / Outline Konten",harga:"Rp 20.000 – Rp 50.000"},
-  {divisi:"Kreatif",nama:"Ide Konten Bulanan (paket 10 ide)",harga:"Rp 100.000"},
-
-  // ===== MARKETING =====
-  {divisi:"Marketing",nama:"Strategi Marketing Dasar",harga:"Rp 50.000 – Rp 100.000"},
-  {divisi:"Marketing",nama:"Penyusunan Rencana Promosi (1 campaign)",harga:"Rp 75.000 – Rp 150.000"},
-  {divisi:"Marketing",nama:"Riset Target Audience",harga:"Rp 50.000 – Rp 100.000"},
-  {divisi:"Marketing",nama:"Social Media Management (per minggu)",harga:"Rp 100.000 – Rp 300.000"},
-  {divisi:"Marketing",nama:"Konsultasi Marketing (1 jam)",harga:"Rp 75.000"}
+const services=[
+{d:"Visual",n:"Edit Foto",h:"Rp 5.000 / foto"},
+{d:"Visual",n:"Edit Video",h:"Rp 5.000 / video"},
+{d:"Visual",n:"Edit Canva",h:"Rp 15.000 / desain"},
+{d:"Visual",n:"Edit ID Card",h:"Rp 2.500 / desain"},
+{d:"Visual",n:"Edit Selain di Atas",h:"Rp 2.500 – Rp 50.000"},
+{d:"Visual",n:"Edit Dokumen",h:"Rp 25.000 – Rp 35.000"},
+{d:"Visual",n:"Desain Logo",h:"Rp 50.000 – Rp 150.000"},
+{d:"Visual",n:"Desain Konten Sosial Media",h:"Rp 20.000 – Rp 50.000"},
+{d:"Visual",n:"Desain Undangan",h:"Rp 25.000 – Rp 75.000"},
+{d:"Visual",n:"Motion Graphic Sederhana",h:"Rp 50.000 – Rp 100.000"},
+{d:"Kreatif",n:"Skrip Kreatif",h:"Rp 15.000 / skrip"},
+{d:"Kreatif",n:"Konsep Kampanye Kreatif",h:"Rp 50.000 – Rp 100.000"},
+{d:"Kreatif",n:"Copywriting",h:"Rp 10.000 – Rp 30.000"},
+{d:"Kreatif",n:"Storyboard / Outline Konten",h:"Rp 20.000 – Rp 50.000"},
+{d:"Kreatif",n:"Ide Konten Bulanan (10 Ide)",h:"Rp 100.000"},
+{d:"Marketing",n:"Strategi Marketing Dasar",h:"Rp 50.000 – Rp 100.000"},
+{d:"Marketing",n:"Rencana Promosi (1 Campaign)",h:"Rp 75.000 – Rp 150.000"},
+{d:"Marketing",n:"Riset Target Audience",h:"Rp 50.000 – Rp 100.000"},
+{d:"Marketing",n:"Social Media Management (Mingguan)",h:"Rp 100.000 – Rp 300.000"},
+{d:"Marketing",n:"Konsultasi Marketing (1 Jam)",h:"Rp 75.000"}
 ];
 
-const container = document.getElementById("layanan");
-
+const c=document.getElementById("list-layanan");
 services.forEach(s=>{
-  const card=document.createElement("div");
-  card.className="card";
-  card.innerHTML=`
-    <div>
-      <div class="divisi">Divisi ${s.divisi}</div>
-      <h3>${s.nama}</h3>
-      <p>${s.harga}</p>
-    </div>
-    <button>Pesan Sekarang</button>
-  `;
-  card.querySelector("button").onclick=()=>{
-    card.classList.add("click");
-    setTimeout(()=>card.classList.remove("click"),300);
-
-    const text=encodeURIComponent(
-      `Halo Imago Creative Group,%0A
-Saya ingin memesan layanan:%0A
-📌 ${s.nama}%0A
-💰 ${s.harga}`
-    );
-    window.open(`https://wa.me/${wa}?text=${text}`,"_blank");
-  };
-  container.appendChild(card);
+c.innerHTML+=`
+<div class="card">
+<div class="divisi">Divisi ${s.d}</div>
+<h3>${s.n}</h3>
+<p>${s.h}</p>
+<button onclick="order('${s.n}')">Pesan via WhatsApp</button>
+</div>`
 });
+
+function order(n){
+const wa="6289508551377";
+const t=encodeURIComponent("Halo Imago Creative Group, saya ingin memesan: "+n);
+window.open(`https://wa.me/${wa}?text=${t}`,"_blank");
+}
 </script>
 
 </body>
