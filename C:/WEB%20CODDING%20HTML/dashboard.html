@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Mode – Imago Creative Group</title>
+<style>
+body{
+  font-family:Arial, sans-serif;
+  background:#0a0a0a;
+  color:#fff;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+}
+.box{
+  background:#111;
+  padding:35px;
+  border-radius:16px;
+  width:100%;
+  max-width:360px;
+  box-shadow:0 20px 60px rgba(0,0,0,.7);
+}
+h2{text-align:center;margin-bottom:25px}
+input{
+  width:100%;
+  padding:14px;
+  margin-bottom:14px;
+  border:none;
+  border-radius:10px;
+  font-size:14px;
+}
+button{
+  width:100%;
+  padding:14px;
+  border:none;
+  border-radius:12px;
+  background:#00e0ff;
+  font-weight:900;
+  cursor:pointer;
+}
+.error{
+  color:#ff4d4d;
+  margin-top:12px;
+  text-align:center;
+  display:none;
+}
+.success{
+  color:#00ff88;
+  margin-top:12px;
+  text-align:center;
+  display:none;
+}
+</style>
+</head>
+<body>
+
+<div class="box">
+  <h2>ADMIN SUPER PRIVATE</h2>
+
+  <input id="password" type="password" placeholder="Password">
+  <input id="pin" type="password" placeholder="PIN">
+  <input id="otp" type="text" placeholder="Kode OTP">
+
+  <button onclick="login()">LOGIN ADMIN</button>
+
+  <div class="error" id="error">Akses Ditolak</div>
+  <div class="success" id="success">ADMIN MODE AKTIF</div>
+</div>
+
+<script>
+const ADMIN_PASSWORD = "F0r.God.All.th3_B3s7";
+const ADMIN_PIN = "121212";
+const ADMIN_OTP = "1M3P10";
+
+function login(){
+  const p = document.getElementById("password").value;
+  const pin = document.getElementById("pin").value;
+  const otp = document.getElementById("otp").value;
+
+  if(p === ADMIN_PASSWORD && pin === ADMIN_PIN && otp === ADMIN_OTP){
+    document.getElementById("error").style.display="none";
+    document.getElementById("success").style.display="block";
+    
+    setTimeout(()=>{
+      window.location.href="dashboard.html";
+    },1000);
+  }else{
+    document.getElementById("error").style.display="block";
+    document.getElementById("success").style.display="none";
+  }
+}
+</script>
+
+</body>
+</html>
