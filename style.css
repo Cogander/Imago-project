@@ -1,105 +1,87 @@
-body{
-font-family:Arial,Helvetica,sans-serif;
-margin:0;
-background:#fff;
-color:#111;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
 
-nav{
-position:fixed;
-top:0;
-width:100%;
-background:#000;
-color:#fff;
-padding:12px;
-display:flex;
-gap:20px;
-z-index:10;
+body {
+  background: #000;
+  color: #fff;
+  text-align: center;
 }
 
-nav a{color:#fff;text-decoration:none}
-
-.hero{
-padding:140px 20px 80px;
-text-align:center;
-background:#111;
-color:#fff;
+/* ===== PUBLIK ===== */
+.hero {
+  padding: 60px 20px;
 }
 
-.hero-btn button{
-padding:14px 26px;
-margin:8px;
-border:none;
-border-radius:30px;
-font-weight:bold;
+.promo {
+  margin: 30px 0;
 }
 
-.ebook-btn{
-background:#ff2a2a;
-color:#fff;
+.red {
+  color: red;
 }
 
-section{padding:80px 20px;max-width:1100px;margin:auto}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
+.small {
+  font-size: 14px;
 }
 
-.card{
-padding:20px;
-border-radius:16px;
-box-shadow:0 8px 20px rgba(0,0,0,.15);
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 15px 30px;
+  background: red;
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: bold;
 }
 
-.card button{
-width:100%;
-padding:10px;
-margin-top:10px;
+.danger {
+  background: darkred;
 }
 
-.ebook-box{
-background:#000;
-color:#fff;
-padding:60px 20px;
-border-radius:30px;
-text-align:center;
+/* ===== ADMIN ===== */
+.admin-bg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-.promo{color:red;font-size:20px;font-weight:bold}
-
-.countdown{
-display:flex;
-justify-content:center;
-gap:12px;
-margin:20px 0;
+.admin-box {
+  background: #111;
+  padding: 30px;
+  border-radius: 15px;
+  width: 100%;
+  max-width: 350px;
 }
 
-.countdown div{
-background:#111;
-padding:10px;
-border-radius:10px;
+.admin-box input {
+  width: 100%;
+  padding: 12px;
+  margin: 15px 0;
+  border-radius: 8px;
+  border: none;
 }
 
-.allpromo{
-margin-top:20px;
-color:red;
-font-size:15px;
+.admin-box button {
+  width: 100%;
+  padding: 12px;
+  background: red;
+  border: none;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
 }
 
-.buy{
-padding:16px 30px;
-border-radius:30px;
-background:red;
-color:#fff;
-border:none;
-margin-top:30px;
+#error {
+  color: red;
+  margin-top: 10px;
 }
 
-footer{
-background:#000;
-color:#fff;
-text-align:center;
-padding:30px;
+.admin-panel {
+  padding: 50px 20px;
 }
