@@ -1,50 +1,22 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<title>Admin Login</title>
-<style>
-body{
-  background:#000;
-  color:#fff;
-  font-family:Arial;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  height:100vh;
-}
-.box{
-  background:#111;
-  padding:30px;
-  border-radius:16px;
-  width:300px;
-}
-input,button{
-  width:100%;
-  margin-top:12px;
-  padding:12px;
-  border-radius:10px;
-  border:none;
-}
-button{
-  background:#00e0ff;
-  font-weight:900;
-}
-</style>
+  <meta charset="UTF-8">
+  <title>Admin Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
 </head>
+<body class="admin-bg">
 
-<body>
-<div class="box">
-  <h3>ADMIN LOGIN</h3>
+  <form id="loginForm" class="admin-box">
+    <h2>ADMIN LOGIN</h2>
 
-  <input id="password" placeholder="Password">
-  <input id="pin" placeholder="PIN">
-  <button onclick="sendOTP()">KIRIM OTP</button>
+    <input type="password" id="password" placeholder="Password Admin" required>
+    <button type="submit">LOGIN</button>
 
-  <input id="otp" placeholder="OTP (cek WA)">
-  <button onclick="verifyOTP()">LOGIN</button>
-</div>
+    <p id="error"></p>
+  </form>
 
-<script src="admin.js"></script>
+  <script src="admin.js"></script>
 </body>
 </html>
