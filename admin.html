@@ -1,30 +1,38 @@
 // ===== KONFIG ADMIN =====
 const ADMIN_PASSWORD = "F0r.God.All.th3_B3s7";
 
-// ===== LOGIN =====
-const form = document.getElementById("loginForm");
-if (form) {
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
+// Jalankan setelah DOM siap
+document.addEventListener("DOMContentLoaded", () => {
 
-    const input = document.getElementById("password").value;
-    const error = document.getElementById("error");
+  // ===== LOGIN =====
+  const form = document.getElementById("loginForm");
 
-    if (input === ADMIN_PASSWORD) {
-      localStorage.setItem("adminLogin", "true");
-      window.location.href = "admin-dashboard.html";
-    } else {
-      error.innerText = "Password salah!";
-    }
-  });
-}
+  if (form) {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
 
-// ===== PROTEKSI DASHBOARD =====
-if (window.location.pathname.includes("admin-dashboard")) {
-  if (localStorage.getItem("adminLogin") !== "true") {
-    window.location.href = "admin-login.html";
+      const input = document.getElementById("password");
+      const error = document.getElementById("error");
+
+      if (!input) return;
+
+      if (input.value === ADMIN_PASSWORD) {
+        localStorage.setItem("adminLogin", "true");
+        window.location.href = "admin-dashboard.html";
+      } else {
+        if (error) error.textContent = "Password salah!";
+      }
+    });
   }
-}
+
+  // ===== PROTEKSI DASHBOARD =====
+  if (window.location.pathname.includes("admin-dashboard.html")) {
+    if (localStorage.getItem("adminLogin") !== "true") {
+      window.location.href = "admin-login.html";
+    }
+  }
+
+});
 
 // ===== LOGOUT =====
 function logout() {
