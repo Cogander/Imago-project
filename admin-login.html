@@ -1,22 +1,7 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-  <meta charset="UTF-8">
-  <title>Admin Login</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body class="admin-bg">
+<form id="loginForm">
+  <input type="password" id="password">
+  <div id="error"></div>
+  <button type="submit">Login</button>
+</form>
 
-  <form id="loginForm" class="admin-box">
-    <h2>ADMIN LOGIN</h2>
-
-    <input type="password" id="password" placeholder="Password Admin" required>
-    <button type="submit">LOGIN</button>
-
-    <p id="error"></p>
-  </form>
-
-  <script src="admin.js"></script>
-</body>
-</html>
+<script src="admin.js"></script>
